@@ -179,7 +179,7 @@ IoT 개발자 파이썬 리포지토리
 
 ### 파이썬 기본 학습
 
-11. 라이브러리 사용 계속
+11. 라이브러리 사용 계속 - [소스](./day03/ex11_out_package.py)
     - 타언어의 경우 웹 검색, 다운로드, 개발위치 설치나 복사
     - CPU 아키텍처에 따라 32bit(x86), 64bit 마다 설치방법 상이
     - 파이썬은 자신만의 패키지 관리자(Packge Manager :pip) 사용
@@ -204,16 +204,18 @@ IoT 개발자 파이썬 리포지토리
 
     > pip
 
-12. 기타 자료구조
+    - CSV 라이브러리 - - [소스](./day03/ex12_csv_package.py)
+
+12. 기타 자료구조 - [소스](./day03/ex13_datastruct.py)
     - 리스트 외 튜플, 딕셔너리, 셋 등...
     - 각 자료구조 형태를 구분
 
-13. main
+13. main- [소스](./day03/ex14_main.py)
     - 파이썬은 main 함수가 필요없음
     - 여러 파일 중 시작저믕ㄹ 지칭할 떄는 사용
     - `__name__` 특수변수를 사용
 
-13. 가상환경
+14. 가상환경 (Virtual Enviroment)
     - 프로젝트 마다 파이썬 환경을 따로 사용하기 위해 만들어진 개념
     - 프로젝트 생성 시 독립된 파이썬, 라이브러리 세트 새로 생성
     - 실제환경 C:\Program Files\Python312 와 비교
@@ -242,7 +244,7 @@ IoT 개발자 파이썬 리포지토리
     - 가상환경은 github에 올리지 말 것.. gitignore에 가상환경 폴더명 추가할 것
 
 
-15. 객체지향
+15. 객체지향 - [소스](./day03/ex15_oop.py) ~ - [소스](./day03/ex18_encapsule.py)
     - C++의 객체지향, 클래스와 동일
     - 접근제한자가 없음(public, privated, protected)
     - C++과 달리 new 안 씀, 변수등 선언 제약사항이 많이 없음
@@ -251,13 +253,13 @@ IoT 개발자 파이썬 리포지토리
     - 파이썬의 철학 : `막지 말고, 알아서 지켜라`
     - public, private(__로 변수 선언),protected(변수선언), C++처럼 접근제한자를 많이 사용안함
 
-16. 예외처리
+16. 예외처리 - [소스](./day03/ex19_exception.py)
     - 비정상 종료를 막는 기능
     - try ~ exceot ~ finally로 구분지어서 사용 (else는 잘 사용안함)
     - except를 여러번 슬쑤 았낫, 'except Exception as e' 하나로 통일해도 무방
     - 예외처리가 발생하면 처리속도가 늦어짐, 비정상종료를 막기위한법
 
-14. main
+17. main
 
 ### 파일 입출력
 - 인코딩
@@ -283,7 +285,7 @@ IoT 개발자 파이썬 리포지토리
     - Project Jupyter
     - 확장에서 Jupter 설치
 
-- 사용법
+- 사용법 - [노트북](./day03/ex20_jupyter_start.ipynb)
     - 명령 팔레트(Ctrl + Shit + P)
 
     ![alt text](image-11.png)
@@ -306,4 +308,25 @@ IoT 개발자 파이썬 리포지토리
 
 - 사용처
     - 웹상에서 동작하므로 많은 서비스를 지원, 로컬 컴퓨터보다 속도 느림
-    - github codespace - 기존 리포지토리와 연결 지원(무료일 경우 한달 140시간)
+    - [Github Codespace](https://github.com/features/codespaces) - 기존 리포지토리와 연결 지원(무료일 경우 한달 140시간)
+    - [Google Colab](https://colab.research.google.com/) - 구글에서 지원하는 노트북서비스, 90분 연결무료, 기능 제약적
+
+### 데이터 분석 기초
+
+- 분석용 기초 이론 - [노트북](./day03/ex21_dataprocess.ipynb)
+    # - 리스트, 튜플, 딕셔너리
+    - 리스트 컴프리헨션
+    - 파일입출력
+    - Numpy
+
+## 4일차
+
+### 데이터 분석 기초 - [노트북]()
+    - Numpy
+    - Pandas
+    - Matplotlib
+    - Seaborn
+    - Folium
+    - WordCloud
+    - 기초통계
+    - 데이터전처리
