@@ -428,3 +428,116 @@ IoT 개발자 파이썬 리포지토리
 ## 6일차
 
 ### 실시간 웹캠처리
+
+- 기본 웹캠 실행
+- FPS(초당 프레임 수) 출력
+- 스냅샷 이미지 저장
+- 얼굴 검출 및 모자이크 처리
+- QR코드 리더
+
+## 7일차
+
+### 가상환경 실행
+- 생성한 가상환경 폴더 내에 Scripts 폴더 안, Activate.ps1 실행해야 가상환경 준비
+
+```powershell
+# 가상환경 활성화(진입)
+> .\iot-venv\Scrips\Activate.ps1f
+# 가상환경 비활성화 - 파워쉘 종료
+```
+
+### 머신러닝, 딥러닝
+- Artifical Intelligence - 인공지능, 가장 오래된 개념
+- Machine Learning - 데이터로 규칙을 컴퓨터가 스스로 찾아내는 알고리즘
+- Deep Learning - 인간과 유사한 인공 신경망으로 패턴을 학습, 음성인식, 번역,
+자율주행, 이미지생성 등 다양한 분야에서 사용되는 머신러닝의 한 갈래
+
+![alt text](image-14.png)
+
+#### 이전 프로그래밍과 딥러닝 차이
+
+- 이전: 2, 4(데이터 입력) 해서 6이 나오는 계산기를 코딩
+- 딥러닝 : 2, 4 -> 6, 7, 8 -> 15(입력, 출력데이터 제공), 계산기를 개발해줘!
+
+#### 딥러닝
+- 컴퓨터가 스스로 학습해서 패턴을 찾아내는 기술
+
+#### 딥러닝이 발전한 이유
+- 빅데이터화, 하드웨어 발전, 알고리즘 개발
+
+### 딥러닝 학습
+
+#### 딥러닝 프레임워크 종류
+
+- pyTorch : 가장 인기가 많은 딥러닝 FW. 연구, AI 서비스, LLM, YOLO...
+- TensorFlow : 구글에 개발, 산업용, TPU(칩 생산)
+- Keras : 교육용 인기.
+- etc : 몰라도 됨
+
+#### 파이토치
+- https://pytorch.org/
+
+- 코드가 직관적이고, 디버깅이 쉽고, 연구/개발쪽 모두 선호하는 프레임워크
+
+![alt text](image-15.png)
+
+#### 설치
+
+- 설치방법
+    - CPU버전: 컴퓨터 CPU를 사용해서 연산하는 방법
+        - 간단 설치
+        - pip3 install torch torchvision
+
+    - GPU버전 존재 : 컴퓨터 CPU를 사용해서 연산하는 방법
+        - 간단 설치
+
+    - GPU버전 : 컴퓨터 그래픽카드의 CPU를 사용하는 방법
+        - Nvidia 그래픽 카드의 경우 CUDA 프레임워크 설치되어야 한다.(필수 x)
+        - https://developer.nvidia.com/cuda-12-6-0-download-archive
+        - 내부에 CUDA 런타임 라이브러리를 가지고 있음
+        - pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+        - cu126/torch-2.12.0%2Bcu126-cp312-cp312-win_amd64.whl 대략 2.6GB 정도
+
+#### CUDA 설치
+
+```
+nvidia-smi
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 591.86                 Driver Version: 591.86         CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5060      WDDM  |   00000000:01:00.0  On |                  N/A |
+|  0%   37C    P3             14W /  145W |    1328MiB /   8151MiB |     23%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            4916    C+G   ...indows\System32\ShellHost.exe      N/A      |
+|    0   N/A  N/A            7688    C+G   ...y\StartMenuExperienceHost.exe      N/A      |
+|    0   N/A  N/A            7772    C+G   ...t\Edge\Application\msedge.exe      N/A      |
+|    0   N/A  N/A            8752    C+G   ...5n1h2txyewy\TextInputHost.exe      N/A      |
+|    0   N/A  N/A            9080    C+G   ...ntrolPanel\SystemSettings.exe      N/A      |
+|    0   N/A  N/A           10148    C+G   ...DE\Microsoft VS Code\Code.exe      N/A      |
+|    0   N/A  N/A           10812    C+G   ...em32\ApplicationFrameHost.exe      N/A      |
+|    0   N/A  N/A           11356    C+G   ...2txyewy\CrossDeviceResume.exe      N/A      |
+|    0   N/A  N/A           11864    C+G   ...Chrome\Application\chrome.exe      N/A      |
+|    0   N/A  N/A           11892    C+G   ...p\app-3.5.8\GitHubDesktop.exe      N/A      |
+|    0   N/A  N/A           13432    C+G   ...ata\Roaming\Zoom\bin\Zoom.exe      N/A      |
+|    0   N/A  N/A           14692    C+G   ....0.3967.70\msedgewebview2.exe      N/A      |
+|    0   N/A  N/A           15848    C+G   ...t\Edge\Application\msedge.exe      N/A      |
+|    0   N/A  N/A           16088    C+G   ...xyewy\ShellExperienceHost.exe      N/A      |
+|    0   N/A  N/A           16540    C+G   C:\Windows\explorer.exe               N/A      |
+|    0   N/A  N/A           16724    C+G   ...Chrome\Application\chrome.exe      N/A      |
+|    0   N/A  N/A           18472    C+G   ..._cw5n1h2txyewy\SearchHost.exe      N/A      |
+|    0   N/A  N/A           21644    C+G   ...am Files\Python312\python.exe      N/A      |
+|    0   N/A  N/A           23048    C+G   ....0.3967.54\msedgewebview2.exe      N/A      |
+|    0   N/A  N/A           24932    C+G   ...yb3d8bbwe\WindowsTerminal.exe      N/A      |
++-----------------------------------------------------------------------------------------+
+```
