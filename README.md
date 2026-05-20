@@ -540,9 +540,12 @@ nvidia-smi
 |    0   N/A  N/A           23048    C+G   ....0.3967.54\msedgewebview2.exe      N/A      |
 |    0   N/A  N/A           24932    C+G   ...yb3d8bbwe\WindowsTerminal.exe      N/A      |
 +-----------------------------------------------------------------------------------------+
+
+
 ```
 
 #### 선형회귀(Linear Regression)
+- [소스](./day07/ex29_pytorch_basic.ipynb)
 - 데이터의 경향이 직선으로 나타나는 모델
 - 한 개 이상의 독립변수와 종속변수 사이의 선형관계를 모델링하는 통계기법
 
@@ -599,4 +602,41 @@ nvidia-smi
 - 출력을 어떻게 변형할지 결정하는 함수
 - sigmoid, tang, `ReLU`
 
-### 8일차
+## 9일차
+
+### 딥러닝 실습
+
+#### fashion-MNIST 분류모델
+
+- MNIST 데이터 셋 중 독일 온라인 패션 플랫폼 잘란도에서 공개한 데이터넷
+- 6만개 학습 이미지. 1만개 테스트 이미지
+- 총 10가지 종류 : 티셔츠, 바지, 풀오버, 드레스, 코트, 샌들, 셔츠, 스니커즈, 가방, 발목부츠
+- 28x28 픽셀 흑백이미지 제공
+
+#### CUDA 사용 팁
+
+- 현재 NVIDIA RTX 5060 그래픽카드
+    - GPU 아키텍처 - Blackwell계열
+    - CUDA Compute Capa - sm_120 사용
+- cuda 12.8 이상 사용
+- 이전 버전은 cuda 12.6 사용가능
+
+- 12.6 버전 pytorch 삭제 후, 13.0 이상 설치
+    - 13.2 버전은 전체 Pytorch기능 사용못함
+
+- 설치 방법
+
+    ```bash
+    > ./iot-venv/Scripts/Activate.ps1  # 가상환경 진입
+
+    > pip uninstall torch torchvision -y
+
+    > pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130 
+    ```
+
+    #### CNN
+
+    - Convolutional Neurl Newtork(합성공 신경망): 미지지나 영상 분석에 특화된 인공지능 신경망구조
+    -Logistic
+
+    ![alt text](image-19.png)
