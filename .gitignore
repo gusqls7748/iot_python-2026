@@ -210,3 +210,4 @@ __marimo__/
 iot-venv/
 # 제외시킬 데이터 폴더
 day10/cust_models/
+day10/dataset/
