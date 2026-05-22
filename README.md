@@ -147,7 +147,7 @@ IoT 개발자 파이썬 리포지토리
     - 여러 문자열 출력방식 존재, f-string 사용추천
     - 포맷팅 기법
 
-7. 함수 - [소스](./day02/ex07_funtion.py)
+7. 함수 - [소스](./day02/ex07_function.py)
     - 객체지향언어 함수 -> 메서드(Method)로 호칭(C#, Java, ...)
     - 파이썬은 함수(Function)으로 호칭
     - C와 유사하게 함수 사용 전에 선언
@@ -398,6 +398,7 @@ IoT 개발자 파이썬 리포지토리
     - Image processing
     - 이미지를 컴퓨터 분석하고 변환하는 분야
     - 동영상 : 연속된 이미지 + 음성
+    - 음성은 제외하고 연속 영상만 사용
     - 초당 이미지를 여러개 변경해서 만들어지는 것 : 보통 1초에 30개 이미지가 변경
     - Frame : 동영상에서 하나씩 변경되는 이미지
     - FPS : Frame Per Second. 1초 뿌려지는 이미지수
@@ -415,19 +416,24 @@ IoT 개발자 파이썬 리포지토리
     - 코드 간결, AI/딥러닝과 연결 쉬움, 데이터 분석 통합 가능
     - C++ OpenCV보다 속도가 느림 -> PyTorch로 속도 개선
 
+    ```bash
+    > pip install opencv-python
+    ```
+    
 - VLC
     - 영상처리 쪽 코덱이 필요
-    - https://www.videolan.org/vlc/index.ko.html
-    - https://livecodec.co.kr/web/
+    - https://www.videolan.org/vlc/index.ko.html 
+    - https://livecodec.co.kr/
 
-- OpenCV 간단 이미지 에디터 - [소스](./day05/ex27_cv_editor.py)
+- OpenCV 간단 이미지에디터 - [소스](./day05/ex27_cv_editor.py)
+    - 대비/밝기, 블러, 엣지, 회전, 이진화 기능, 이미지 로드/저장
     - 실행화면
 
     ![alt text](image-13.png)
 
 ## 6일차
 
-### 실시간 웹캠처리
+### 실시간 웹캠 처리
 
 - 기본 웹캠 실행
 - FPS(초당 프레임 수) 출력
@@ -438,26 +444,25 @@ IoT 개발자 파이썬 리포지토리
 ## 7일차
 
 ### 가상환경 실행
-- 생성한 가상환경 폴더 내에 Scripts 폴더 안, Activate.ps1 실행해야 가상환경 준비
+- 생성한 가상환경 내에 Scripts 폴더 안, Activtate.ps1 실행해야 가상환경 준비
 
 ```powershell
 # 가상환경 활성화(진입)
-> .\iot-venv\Scrips\Activate.ps1f
+> .\iot-venv\Scripts\Activate.ps1
 # 가상환경 비활성화 - 파워쉘 종료
 ```
 
 ### 머신러닝, 딥러닝
-- Artifical Intelligence - 인공지능, 가장 오래된 개념
+- Artificial Intelligence - 인공지능. 가장 오래된 개념
 - Machine Learning - 데이터로 규칙을 컴퓨터가 스스로 찾아내는 알고리즘
-- Deep Learning - 인간과 유사한 인공 신경망으로 패턴을 학습, 음성인식, 번역,
-자율주행, 이미지생성 등 다양한 분야에서 사용되는 머신러닝의 한 갈래
+- Deep Learning - 인간과 유사한 **인공 신경망**으로 패턴을 학습, 음성인식, 번역, 자율주행, 이미지생성 등 다양한 분야에서 사용되는 머신러닝의 한 갈래
 
 ![alt text](image-14.png)
 
 #### 이전 프로그래밍과 딥러닝 차이
 
-- 이전: 2, 4(데이터 입력) 해서 6이 나오는 계산기를 코딩
-- 딥러닝 : 2, 4 -> 6, 7, 8 -> 15(입력, 출력데이터 제공), 계산기를 개발해줘!
+- 이전 : 2, 4(데이터 입력) 해서 6이 나오는 계산기를 코딩
+- 딥러닝 : 2, 4 -> 6, 7, 8 -> 15(입력, 출력데이터 제공). 계산기를 개발해줘!
 
 #### 딥러닝
 - 컴퓨터가 스스로 학습해서 패턴을 찾아내는 기술
@@ -469,83 +474,35 @@ IoT 개발자 파이썬 리포지토리
 
 #### 딥러닝 프레임워크 종류
 
-- pyTorch : 가장 인기가 많은 딥러닝 FW. 연구, AI 서비스, LLM, YOLO...
-- TensorFlow : 구글에 개발, 산업용, TPU(칩 생산)
-- Keras : 교육용 인기.
+- **PyTorch** : 가장 인기가 많은 딥러닝 FW. 연구, AI서비스, LLM, YOLO...
+- TensorFlow : 구글에 개발. 산업용, TPU(칩 생산)
+- Keras : 교육용 인기
 - etc : 몰라도 됨
 
 #### 파이토치
-- https://pytorch.org/
 
 - 코드가 직관적이고, 디버깅이 쉽고, 연구/개발쪽 모두 선호하는 프레임워크
+- https://pytorch.org/
 
 ![alt text](image-15.png)
 
-#### 설치
-
 - 설치방법
-    - CPU버전: 컴퓨터 CPU를 사용해서 연산하는 방법
+    - CPU버전 : 컴퓨터 CPU를 사용해서 연산하는 방법
         - 간단 설치
-        - pip3 install torch torchvision
-
-    - GPU버전 존재 : 컴퓨터 CPU를 사용해서 연산하는 방법
-        - 간단 설치
+        - pip install torch torchvision
 
     - GPU버전 : 컴퓨터 그래픽카드의 CPU를 사용하는 방법
-        - Nvidia 그래픽 카드의 경우 CUDA 프레임워크 설치되어야 한다.(필수 x)
+        - Nvidia 그래픽카드의 경우 CUDA 프레임워크 설치되어야 함(필수x)
         - https://developer.nvidia.com/cuda-12-6-0-download-archive
         - 내부에 CUDA 런타임 라이브러리를 가지고 있음
-        - pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126
-        - cu126/torch-2.12.0%2Bcu126-cp312-cp312-win_amd64.whl 대략 2.6GB 정도
+        - pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+        - cu126-cp312-cp312-win_amd64.whl 대략 2.6GB 정도
 
-#### CUDA 설치
-
-```
-nvidia-smi
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 591.86                 Driver Version: 591.86         CUDA Version: 13.1     |
-+-----------------------------------------+------------------------+----------------------+
-| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-|                                         |                        |               MIG M. |
-|=========================================+========================+======================|
-|   0  NVIDIA GeForce RTX 5060      WDDM  |   00000000:01:00.0  On |                  N/A |
-|  0%   37C    P3             14W /  145W |    1328MiB /   8151MiB |     23%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-
-+-----------------------------------------------------------------------------------------+
-| Processes:                                                                              |
-|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
-|        ID   ID                                                               Usage      |
-|=========================================================================================|
-|    0   N/A  N/A            4916    C+G   ...indows\System32\ShellHost.exe      N/A      |
-|    0   N/A  N/A            7688    C+G   ...y\StartMenuExperienceHost.exe      N/A      |
-|    0   N/A  N/A            7772    C+G   ...t\Edge\Application\msedge.exe      N/A      |
-|    0   N/A  N/A            8752    C+G   ...5n1h2txyewy\TextInputHost.exe      N/A      |
-|    0   N/A  N/A            9080    C+G   ...ntrolPanel\SystemSettings.exe      N/A      |
-|    0   N/A  N/A           10148    C+G   ...DE\Microsoft VS Code\Code.exe      N/A      |
-|    0   N/A  N/A           10812    C+G   ...em32\ApplicationFrameHost.exe      N/A      |
-|    0   N/A  N/A           11356    C+G   ...2txyewy\CrossDeviceResume.exe      N/A      |
-|    0   N/A  N/A           11864    C+G   ...Chrome\Application\chrome.exe      N/A      |
-|    0   N/A  N/A           11892    C+G   ...p\app-3.5.8\GitHubDesktop.exe      N/A      |
-|    0   N/A  N/A           13432    C+G   ...ata\Roaming\Zoom\bin\Zoom.exe      N/A      |
-|    0   N/A  N/A           14692    C+G   ....0.3967.70\msedgewebview2.exe      N/A      |
-|    0   N/A  N/A           15848    C+G   ...t\Edge\Application\msedge.exe      N/A      |
-|    0   N/A  N/A           16088    C+G   ...xyewy\ShellExperienceHost.exe      N/A      |
-|    0   N/A  N/A           16540    C+G   C:\Windows\explorer.exe               N/A      |
-|    0   N/A  N/A           16724    C+G   ...Chrome\Application\chrome.exe      N/A      |
-|    0   N/A  N/A           18472    C+G   ..._cw5n1h2txyewy\SearchHost.exe      N/A      |
-|    0   N/A  N/A           21644    C+G   ...am Files\Python312\python.exe      N/A      |
-|    0   N/A  N/A           23048    C+G   ....0.3967.54\msedgewebview2.exe      N/A      |
-|    0   N/A  N/A           24932    C+G   ...yb3d8bbwe\WindowsTerminal.exe      N/A      |
-+-----------------------------------------------------------------------------------------+
-
-
-```
+#### 파이토치 기본문법
+- [소스](./day07/ex29_pytorch_basic.ipynb)
 
 #### 선형회귀(Linear Regression)
-- [소스](./day07/ex29_pytorch_basic.ipynb)
+- [소스](./day07/ex30_pytorch_nn.ipynb)
 - 데이터의 경향이 직선으로 나타나는 모델
 - 한 개 이상의 독립변수와 종속변수 사이의 선형관계를 모델링하는 통계기법
 
@@ -554,20 +511,21 @@ nvidia-smi
     - 시험 점수(종속변수/출력값): y
     - y = wx + b 직선의 방정식을 찾는 것
 
-| 공부식간(x) | 시험점수(y) |
-| ---- | ---- |
-| 1 | 52 |
-| 2 | 60 |
-| 3 | 68 |
-| 4 | 76 |
-| 5 | 84 |
-- 공부시간과 시험점수 사이의 관계를 찾을 것
-- 기울기 w : 공부시간이 1시간 늘면 점수가 몇점 오르나?
-    - w = 10 -> 1시간 공부하면 10점 오른다
-- 절편 b : 기본점수, 공부를 하나도 안해도 나오는 점수
-    - b = 45 -> 찍어도 나오는 점수
+    |공부시간(x) | 시험점수(y) |
+    |---|---|
+    |1 | 52 |
+    |2 | 60 |
+    |3 | 68 |
+    |4 | 76 |    
+    |5 | 84 |
 
-- 가장 잘 맞는 w와 b를 찾아가는 과정
+    - 공부시간과 시험점수 사이의 관계를 찾을 것
+    - 기울기 w : 공부시간이 1시간 늘면 점수가 몇점 오르나?
+        - w = 10 -> 1시간 공부하면 10점 오른다
+    - 절편 b : 기본점수, 공부를 하나도 안해도 나오는 점수
+        - b = 45 -> 찍어도 나오는 점수
+
+    - 가장 잘 맞는 w와 b를 찾아가는 과정
 
 - 선형회귀 순서
     1. 임의 w와 b를 지정
@@ -577,12 +535,11 @@ nvidia-smi
     5. w와 b를 약간 수정 -> 경사하강법
     6. 반복 -> 학습률
 
-- 입력 출력을 해서 ai가 자동으로 출력해주는것
-
 #### 정리
 
 - 일반 프로그래밍 : 입력값, 가중치, 절편을 입력해서, 출력값을 리턴하는 프로그램 개발
-- 인공지능 프로그래밍: 입력값,출력값을 입력해서, 가중치, 절편 등을 구하는 모델을 개발
+- 인공지능 프고래밍 : 입력값, 출력값을 입력해서, 가중치, 절편 등을 구하는 모델을 개발
+
 
 #### 퍼셉트론
 
@@ -593,95 +550,100 @@ nvidia-smi
 
 #### 다중퍼셉트론
 
+- [소스](./day08/ex31_pytorch_nn.ipynb)
 - 단일 퍼셉트론의 한계를 극복하기 위해 등장. 퍼셉트론을 여러개 쌓아올린 구조
 - 입력층, 은닉층, 출력층으로 구분
 
 ![alt text](image-17.png)
 
-#### 활성화 함수
+#### 활성화함수
 - 출력을 어떻게 변형할지 결정하는 함수
-- sigmoid, tang, `ReLU`
+- Sigmoid, Tanh, `ReLU`, Softmax
 
 ## 9일차
 
 ### 딥러닝 실습
 
-#### fashion-MNIST 분류모델
+#### Fashion-MNIST 분류모델
 
-- MNIST 데이터 셋 중 독일 온라인 패션 플랫폼 잘란도에서 공개한 데이터넷
-- 6만개 학습 이미지. 1만개 테스트 이미지
+- [소스](./day09/ex32_pytorch_fashion_mnist.ipynb)
+- MNIST 데이터셋 중 독일 온라인 패션 플랫폼 잘란도에서 공개한 데이터넷
+- 6만개 학습 이미지, 1만개 테스트 이미지
 - 총 10가지 종류 : 티셔츠, 바지, 풀오버, 드레스, 코트, 샌들, 셔츠, 스니커즈, 가방, 발목부츠
 - 28x28 픽셀 흑백이미지 제공
 
 #### CUDA 사용 팁
 
 - 현재 NVIDIA RTX 5060 그래픽카드
-    - GPU 아키텍처 - Blackwell계열
+    - GPU 아키텍처 - Blackwell계열 
     - CUDA Compute Capa - sm_120 사용
-- cuda 12.8 이상 사용
+    - cuda 12.8 이상 사용
 - 이전 버전은 cuda 12.6 사용가능
 
-- 12.6 버전 pytorch 삭제 후, 13.0 이상 설치
+- 12.6 버전 Pytorch 삭제 후, 13.0 이상 설치
     - 13.2 버전은 전체 Pytorch기능 사용못함
 
 - 설치 방법
 
-    ```bash
-    > ./iot-venv/Scripts/Activate.ps1  # 가상환경 진입
+    ```powershell
+    > .\iot-venv\Scripts\Activate.ps1  # 가상환경 진입
 
     > pip uninstall torch torchvision -y
 
     > pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130 
     ```
 
-    #### CNN
+#### CNN
 
-    - Convolutional Neurl Newtork(합성공 신경망): 미지지나 영상 분석에 특화된 인공지능 신경망구조
-    -Logistic
+- [소스](./day09/ex33_pytorch_cnn.ipynb)
+- Convolutional Neural Network(합성곱 신경망) : 이미지나 영상 분석에 특화된 인공지능 신경망 구조
+- 로지스틱 회귀 : 이미지를 1차원으로 변경 처리
 
-    ![alt text](image-19.png)
+![alt text](image-19.png)
 
-    ## 10일차
+- 활성화함수 Softmax() 클래스는 deprecated(추후 버전에 삭제예정)임
 
-    ### 사전학습 모델 활용
-    
-    - [소스](./day10/ex35_pytorch_pretrained.ipynb)
-    - ImageNet : 세계에서 가장 유명한 대규모 이미지 데이터셋
-        - 2009년도 부터 공개한 이미지 은행
-        - 2만개 클래스, 총 1400만장 이상 고해상도 이미지
-    - ResNet18 : MS연구소에서 개발한 ResNet의 경량화 비전
-        - 18 : 가중치 학습 18개 층으로 구성
-        - PyTorch나 Tensorflow에서
-    
-    - 일반 CNN : 데이터준비 > 모델 설계 > 처음부터 학습
-    - 사전훈련 모델 : 학습된 모델 로드 > 마지막 분류층만 수정 > 나의 데이터로 추가학습
 
-    ### 데이터 추가학습
+## 10일차
 
-    ![alt text](image-20.png)
+### 사전학습 모델 활용
 
-    ### 모델저장/불러오기
+- [소스](./day10/ex35_pytorch_pretrained.ipynb)
+- ImageNet : 세계에서 가장 유명한 대규모 이미지 데이터셋 
+    - 2009년도 부터 공개한 이미지 은행
+    - 2만개 클래스, 총 1400만장 이상 고해상도 이미지
+- ResNet18 : MS연구소에서 개발한 ResNet의 경량화 버전
+    - 18 : 가중치 학습 18개 층으로 구성
+    - PyTorch나 Tensorflow에서 
 
-    - [소스](./day10/ex36_pytorch_trainmodel.ipynb)
-    - 학습후 저장된 모델을 로드해서 훈련시간 절약
+- 일반 CNN : 데이터준비 > 모델 설계 > 처음부터 학습
+- 사전학습 모델 : 학습된 모델 로드 > 마지막 분류층만 수정 > 나의 데이터로 추가학습
 
-    ![alt text](image-21.png)
+![alt text](image-20.png)
 
-    ### YOLO로 객체탐지
+### 모델불러오기
 
-    - YOLO : You Only Look Once 약자
-        - PyTorch 라이브러리 위에서 동작하는 물체인식 라이브러리
-        - Ultralytics YOLO: https://www.ultralytics.com/
-        - 공식 github : https://github.com/ultralytics/ultralytics
+- [소스](./day10/ex36_pytorch_trainmodel.ipynb)
+- 학습 후 저장된 모델을 로드해서 훈련시간 절약
 
-    - 이미지, 영상 인식
+![alt text](image-21.png)
 
-    - YOLO 설치
+## 11일차
 
-        ```powershell
-        > pip install ultraytics 
-        pip install ultralytics huggingface_hub
-        ```
+### YOLO로 객체탐지
 
-TODO - 영상 업로드
+- YOLO : You Only Look Once 약자
+    - PyTorch 라이브러리 위에서 동작하는 물체인식 라이브러리
+    - Ultralytics YOLO : https://www.ultralytics.com/
+    - 공식 github : https://github.com/ultralytics/ultralytics 
 
+- 이미지, 영상 인식
+
+- YOLO 설치
+
+    ```powershell
+    > pip install ultralytics huggingface_hub
+    ```
+
+
+https://github.com/user-attachments/assets/79273d45-8b9c-49cb-86f4-67cf50e824bc
