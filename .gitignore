@@ -213,3 +213,9 @@ day10/cust_models/
 day10/dataset/
 day10/temp_dir/
 day10/
+day11/data
+runs/
+# 모델파일은 제외
+*.pth
+
+day11/

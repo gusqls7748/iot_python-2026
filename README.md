@@ -676,3 +676,12 @@ nvidia-smi
 
     - 이미지, 영상 인식
 
+    - YOLO 설치
+
+        ```powershell
+        > pip install ultraytics 
+        pip install ultralytics huggingface_hub
+        ```
+
+TODO - 영상 업로드
+
